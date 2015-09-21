@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     var newTask = { description: inputtedTaskDescription, importance: inputtedTaskImportance };
 
-    $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " " + newTask.importance + "</span></li>");
+    $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " </span><button type='submit' class='btn'>Completed</button></li>");
 
     $("input#new-task-description").val("");
     $("input#new-task-importance").val("");

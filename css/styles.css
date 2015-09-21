@@ -9,6 +9,7 @@
 .to-do {
   cursor: pointer;
   color: #0088cc;
+  font-size: 18px;
 }
 
 .to-do:hover {
