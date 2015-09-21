@@ -10,7 +10,9 @@ $(document).ready(function() {
 
     $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " </span><button> Move to completed tasks</button></li>");
     $("button").click(function(){
-    $("li").detach();
+    $(".to-do").detach().prependTo("ul#tasks-completed");
+    $("button").detach();
+    $("li").remove();
   });
 
     $("input#new-task-description").val("");
