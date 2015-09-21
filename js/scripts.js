@@ -5,9 +5,13 @@ $(document).ready(function() {
     var inputtedTaskDescription = $("input#new-task-description").val();
     var inputtedTaskImportance = $("input#new-task-importance").val();
 
+
     var newTask = { description: inputtedTaskDescription, importance: inputtedTaskImportance };
 
-    $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " </span><button type='submit' class='btn'>Completed</button></li>");
+    $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " </span><button> Move to completed tasks</button></li>");
+    $("button").click(function(){
+    $("li").detach();
+  });
 
     $("input#new-task-description").val("");
     $("input#new-task-importance").val("");
