@@ -11,5 +11,13 @@ $(document).ready(function() {
 
     $("input#new-task-description").val("");
     $("input#new-task-importance").val("");
+
+
+  $(".to-do").last().click(function() {
+    $("#show-task-to-do").show();
+    $("#show-task-to-do h2").text(newTask.description);
+    $(".task-description").text(newTask.description);
+    $(".task-importance").text(newTask.importance);
+    });
   });
 });
