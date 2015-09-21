@@ -8,8 +8,8 @@ $(document).ready(function() {
 
     var newTask = { description: inputtedTaskDescription, importance: inputtedTaskImportance };
 
-    $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " </span><button> Move to completed tasks</button></li>");
-    $("button").click(function(){
+    $("ul#tasks-to-do").append("<li><span class='to-do'>" + newTask.description + " </span><button id='move'> Move to completed tasks</button></li>");
+    $("button#move").click(function(){
     $(".to-do").detach().prependTo("ul#tasks-completed");
     $("button").detach();
     $("li").remove();
