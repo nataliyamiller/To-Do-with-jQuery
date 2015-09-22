@@ -6,24 +6,32 @@ $(document).ready(function() {
     var inputtedTaskImportance = $("input#new-task-importance").val();
 
 
-    var newTask = { description: inputtedTaskDescription, importance: inputtedTaskImportance, item: [] };
-
-  var item = "<li><span class='to-do'>" + newTask.description + "<button id='move'>Move</button></span></li>";
-
-   $("ul#tasks-to-do").append(item);
+    var newTask = { description: inputtedTaskDescription, importance: inputtedTaskImportance, completed: false };
 
 
 
-   var clickedButton = $(".to-do #move").last().click(function() {
-     alert("button clicked");
+  var newItem = "<li><span class='to-do'>" + newTask.description + "  <button id='move'>Move to completed</button></span></li>";
+
+
+   $("ul#tasks-to-do").append(newItem);
+
+
+   var $clickedButton = $(".to-do #move").click(function() {
      var $this = $(this);
      $this.toggleClass("move");
      if($this.hasClass("move")) {
        $this.text("Move to to-do");
+       newTask.completed = true;
+       alert(newTask.completed);
+
      } else {
        $this.text("Move to completed");
+       newTask.completed = false;
+       alert(newTask.completed);
      }
-     var $toDo = $(".to-do");
+
+
+     var $toDo = $(".to-do").last();
      $toDo.toggleClass(".to-do");
      if($toDo.hasClass(".to-do")) {
      $toDo.detach().appendTo("ul#tasks-completed");
@@ -31,6 +39,15 @@ $(document).ready(function() {
      $toDo.detach().appendTo("ul#tasks-to-do");
    }
    });
+
+
+
+
+
+  //  if ($clickedButton) {
+  //    newTask.completed = true;
+  //  }
+
 
 
 
@@ -50,11 +67,11 @@ $(document).ready(function() {
     $("input#new-task-importance").val("");
 
 
-  $(".to-do").last().click(function() {
-    $("#show-task-to-do").show();
-    $("#show-task-to-do h2").text(newTask.description);
-    $(".task-description").text(newTask.description);
-    $(".task-importance").text(newTask.importance);
-      });
+  // $(".to-do").last().click(function() {
+  //   $("#show-task-to-do").show();
+  //   $("#show-task-to-do h2").text(newTask.description);
+  //   $(".task-description").text(newTask.description);
+  //   $(".task-importance").text(newTask.importance);
+  //     });
     });
   });
