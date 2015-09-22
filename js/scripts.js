@@ -10,10 +10,10 @@ $(document).ready(function() {
 
 
 
-  var newItem = "<li><span class='to-do'>" + newTask.description + "  <button id='move'>Move to completed</button></span></li>";
+  var newItem = "<h4><span class='to-do'>" + newTask.description + "  <button id='move'>Move to completed</button></span></h4>";
 
 
-   $("ul#tasks-to-do").append(newItem);
+   $("p#tasks-to-do").append(newItem);
 
 
    var $clickedButton = $(".to-do #move").click(function() {
@@ -34,9 +34,9 @@ $(document).ready(function() {
      var $toDo = $(".to-do").last();
      $toDo.toggleClass(".to-do");
      if($toDo.hasClass(".to-do")) {
-     $toDo.detach().appendTo("ul#tasks-completed");
+     $toDo.detach().appendTo("p#tasks-completed");
    } else {
-     $toDo.detach().appendTo("ul#tasks-to-do");
+     $toDo.detach().appendTo("p#tasks-to-do");
    }
    });
 

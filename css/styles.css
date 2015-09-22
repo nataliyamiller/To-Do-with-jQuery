@@ -10,6 +10,7 @@
   cursor: pointer;
   color: #0088cc;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .to-do:hover {
